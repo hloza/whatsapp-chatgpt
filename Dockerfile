@@ -9,8 +9,8 @@ RUN apt install -y chromium
 RUN apt install -y ffmpeg
 ## It will install latest model of OpenAI Whisper (around 6~7 GB)
 ## Uncomment below command if you want to use the local version of transcription module
-# RUN pip install -y python pip
-# RUN pip install -U openai-whisper
+RUN pip install -y python pip
+RUN pip install -U openai-whisper
 
 WORKDIR /app/
 
