@@ -114,7 +114,7 @@ async function handleIncomingMessage(message: Message) {
 		message.reply(reply);
 
 		// Handle message GPT
-		await handleMessageGPT(message, transcribedText);
+		// await handleMessageGPT(message, transcribedText);
 		return;
 	}
 
