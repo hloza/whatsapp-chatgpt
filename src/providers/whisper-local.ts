@@ -46,14 +46,14 @@ function parseDetectedLanguage(text) {
 }
 
 function parseTextAfterTimeFrame(text) {
-	const regex = /\[\d{2}:\d{2}\.\d{3}\s-->\s\d{2}:\d{2}\.\d{3}\]\s(.+)/;
-	const textMatch = text.match(regex); // Extract the text
-	
-	if (textMatch && textMatch.length >= 2) {
-    return textMatch[1].trim();
+  const regex = /\[\d{2}:\d{2}\.\d{3}\s-->\s\d{2}:\d{2}\.\d{3}\]\s(.+)/g;
+  const matches = text.match(regex);
+
+  if (matches) {
+    return matches.map((match) => match.replace(/\r?\n|\r/g, '').trim());
   }
 
-	return null; // Return null if match is not found
+  return []; // Devuelve un array vacío si no hay coincidencias
 }
 
 export { transcribeAudioLocal };
