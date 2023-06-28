@@ -46,12 +46,12 @@ function parseDetectedLanguage(text) {
 }
 
 function parseTextAfterTimeFrame(text) {
-	const textMatch = text.match(/\[\d{2}:\d{2}\.\d{3}\s-->\s\d{2}:\d{2}\.\d{3}\]\s(.+)/); // Extract the text
+	const regex = /\[\d{2}:\d{2}\.\d{3}\s-->\s\d{2}:\d{2}\.\d{3}\]\s(.+)/;
+	const textMatch = text.match(regex); // Extract the text
 	
-	if (textMatch) {
-		//cli.print("El recorte H: " + textMatch[3].trim());
-		return textMatch[3].trim();
-	}
+	if (textMatch && textMatch.length >= 2) {
+    return textMatch[1].trim();
+  }
 
 	return null; // Return null if match is not found
 }
