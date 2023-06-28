@@ -27,7 +27,7 @@ async function transcribeAudioLocal(audioBuffer: Buffer): Promise<{ text: string
 	}
 
 	// Return parsed text and language
-	cli.print("Output Audio H: " + output);
+	//cli.print("Output Audio H: " + output);
 	return {
 		text: parseTextAfterTimeFrame(output),
 		language: parseDetectedLanguage(output)
@@ -49,7 +49,7 @@ function parseTextAfterTimeFrame(text) {
 	const textMatch = text.match(/\[\d{2}:\d{2}\.\d{3}\s-->\s\d{2}:\d{2}\.\d{3}\]\s(.+)/); // Extract the text
 	
 	if (textMatch) {
-		cli.print("El recorte H: " + textMatch[3].trim());
+		//cli.print("El recorte H: " + textMatch[3].trim());
 		return textMatch[3].trim();
 	}
 
