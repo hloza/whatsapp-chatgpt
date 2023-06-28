@@ -50,10 +50,11 @@ function parseTextAfterTimeFrame(text) {
   const matches = text.match(regex);
 
   if (matches) {
-    return matches.map((match) => match.replace(/\r?\n|\r/g, '').trim());
+    return matches.map((match) => match.replace(/\[\d{2}:\d{2}\.\d{3}\s-->\s\d{2}:\d{2}\.\d{3}\]\s/, '').trim()).join(' ');
   }
 
-  return []; // Devuelve un array vacío si no hay coincidencias
+  return ""; // Devuelve una cadena vacía si no hay coincidencias
 }
+
 
 export { transcribeAudioLocal };
