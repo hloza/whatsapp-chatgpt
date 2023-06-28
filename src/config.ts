@@ -99,7 +99,7 @@ export const config: IConfig = {
 	ttsMode: getEnvTTSMode(), // Default: speech-api
 
 	// Transcription
-	transcriptionEnabled: getEnvBooleanWithDefault("TRANSCRIPTION_ENABLED", false), // Default: false
+	transcriptionEnabled: getEnvBooleanWithDefault("TRANSCRIPTION_ENABLED", true), // Default: false
 	transcriptionMode: getEnvTranscriptionMode(), // Default: local
 	transcriptionLanguage: process.env.TRANSCRIPTION_LANGUAGE || "" // Default: null
 };
