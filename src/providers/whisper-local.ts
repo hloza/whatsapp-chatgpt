@@ -13,7 +13,7 @@ async function transcribeAudioLocal(audioBuffer: Buffer): Promise<{ text: string
 	fs.writeFileSync(audioPath, audioBuffer);
 
 	// Transcribe audio
-	const output = execSync(`whisper ${audioPath}`, { encoding: "utf-8" });
+	const output = execSync(`whisper ${audioPath} --model medium`, { encoding: "utf-8" });
 
 	// Delete tmp file
 	fs.unlinkSync(audioPath);
