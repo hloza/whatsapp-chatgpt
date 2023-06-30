@@ -1,12 +1,15 @@
 version: "3"
 services:
     whatsapp-chatgpt:
+        container_name: whatsapp-chatgpt
+        read_only: true
         image: ghcr.io/askrella/whatsapp-chatgpt:master
         environment:
             OPENAI_API_KEY: "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"
             OPENAI_GPT_MODEL: "gpt-3.5-turbo"
             PREFIX_ENABLED: "true"
             SERPAPI_API_KEY: ""
+        restart: unless-stopped
         volumes:
             - session-data:/app/session
 volumes:
