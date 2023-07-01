@@ -12,7 +12,7 @@ RUN apt install -y ffmpeg
 RUN apt install -y python pip
 #RUN pip install -y python pip
 RUN pip install -U openai-whisper
-RUN pip3 uninstall torch torchvision torchaudio
+RUN pip3 uninstall -y torch
 RUN pip3 cache purge
 
 RUN pip install -U cuda-python
