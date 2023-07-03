@@ -1,3 +1,12 @@
+templateVersion: 1.0.0
+defaultVersion: 1.0.1
+documentation: https://404.codes
+type: whatsappbot
+name: WhatsappBOT
+description: Whatsapp Bot.
+labels:
+  - whatsapp
+  - bot
 version: "3"
 services:
     whatsapp-chatgpt:
@@ -11,6 +20,4 @@ services:
             SERPAPI_API_KEY: ""
         restart: unless-stopped
         volumes:
-            - session-data:/app/session
-volumes:
-    session-data:
+            - $$id-session-data:/app/session
