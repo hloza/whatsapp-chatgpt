@@ -1,11 +1,4 @@
-templateVersion: 1.0.0
-defaultVersion: 1.0.1
-documentation: https://404.codes
-name: WhatsappBOT
-labels:
-  - whatsapp
-  - bot
-version: "3"
+version: "3.9"
 services:
   app:
     build: .
