@@ -1,9 +1,7 @@
 templateVersion: 1.0.0
 defaultVersion: 1.0.1
 documentation: https://404.codes
-type: whatsappbot
 name: WhatsappBOT
-description: Whatsapp Bot.
 labels:
   - whatsapp
   - bot
