@@ -12,7 +12,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - $$id-app-session:/app/session
+      - whatsapp-chatgpt-session:
     restart: unless-stopped
     deploy:
       resources:
@@ -23,4 +23,4 @@ services:
     tmpfs:
       - /tmp
 volumes:
-  $$id-app-session:
+  whatsapp-chatgpt-session:
