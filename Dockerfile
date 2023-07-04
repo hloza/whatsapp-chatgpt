@@ -17,6 +17,8 @@ RUN apt install -y ffmpeg
 ## Uncomment below command if you want to use the local version of transcription module
 RUN apt install -y python pip
 #RUN pip install -y python pip
+#Actualizar pip para poder usar el cache purge
+RUN pip3 install --upgrade pip
 RUN pip install -U openai-whisper
 RUN pip3 uninstall -y torch
 RUN pip3 cache purge
