@@ -11,8 +11,6 @@ services:
       TRANSCRIPTION_MODE: "local"
     ports:
       - "3000:3000"
-    volumes:
-      - whatsapp-chatgpt-session:
     restart: unless-stopped
     deploy:
       resources:
@@ -22,5 +20,3 @@ services:
               capabilities: [gpu]
     tmpfs:
       - /tmp
-volumes:
-  whatsapp-chatgpt-session:
