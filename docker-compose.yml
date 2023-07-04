@@ -1,9 +1,8 @@
 version: "3.9"
 services:
   app:
-    build: .
     container_name: whatsapp-chatgpt
-    read_only: true
+    build: .
     environment:
       OPENAI_API_KEY: "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"
       OPENAI_GPT_MODEL: "gpt-3.5-turbo"
@@ -12,12 +11,16 @@ services:
       TRANSCRIPTION_MODE: "local"
     ports:
       - "3000:3000"
-    restart: unless-stopped
     volumes:
-      - $$idwhatsapp:/app/session
+      - $$id-app-session:/app/session
+    restart: unless-stopped
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
               capabilities: [gpu]
+    tmpfs:
+      - /tmp
+volumes:
+  $$id-app-session:
