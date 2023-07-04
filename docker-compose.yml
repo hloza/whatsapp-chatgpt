@@ -7,24 +7,24 @@ labels:
   - bot
 version: "3"
 services:
-    app:
-      build: .
-       container_name: whatsapp-chatgpt
-       read_only: true
-        environment:
-            OPENAI_API_KEY: "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"
-            OPENAI_GPT_MODEL: "gpt-3.5-turbo"
-            PREFIX_ENABLED: "true"
-            SERPAPI_API_KEY: "ade0033f63659019b48e8b68db1aadad012d97b53ffdef490df67fadbf6211f4"
-            TRANSCRIPTION_MODE: "local"
-            ports:
-              - "3000:3000"
-        restart: unless-stopped
-        volumes:
-            - $$idwhatsapp:/app/session
-        deploy:
-          resources:
-            reservations:
-              devices:
-              - driver: nvidia
-                capabilities: [gpu]
+  app:
+    build: .
+    container_name: whatsapp-chatgpt
+    read_only: true
+    environment:
+      OPENAI_API_KEY: "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"
+      OPENAI_GPT_MODEL: "gpt-3.5-turbo"
+      PREFIX_ENABLED: "true"
+      SERPAPI_API_KEY: "ade0033f63659019b48e8b68db1aadad012d97b53ffdef490df67fadbf6211f4"
+      TRANSCRIPTION_MODE: "local"
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+      - $$idwhatsapp:/app/session
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
