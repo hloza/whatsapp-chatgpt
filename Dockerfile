@@ -1,5 +1,5 @@
 # FROM node:bullseye-slim
-FROM nvidia/cuda:12.2.0-base-ubuntu20.04
+FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
 
 RUN apt update
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,9 +11,7 @@ RUN apt install -y gconf-service libgbm-dev libasound2 libatk1.0-0 libc6 libcair
 RUN apt install -y chromium-browser curl
 
 #node
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-RUN . ~/.nvm/nvm.sh && nvm install node
-RUN . ~/.nvm/nvm.sh && nvm use node
+RUN apt install -y nodejs npm
 
 # For transcription
 RUN apt install -y ffmpeg
