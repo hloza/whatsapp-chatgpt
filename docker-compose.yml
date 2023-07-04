@@ -21,3 +21,9 @@ services:
         restart: unless-stopped
         volumes:
             - $$id-session-data:/app/session
+        deploy:
+          resources:
+            reservations:
+              devices:
+              - driver: nvidia
+                capabilities: [gpu]
