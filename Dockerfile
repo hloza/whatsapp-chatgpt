@@ -17,7 +17,7 @@ RUN apt install -y nodejs npm
 RUN apt install -y ffmpeg
 ## It will install latest model of OpenAI Whisper (around 6~7 GB)
 ## Uncomment below command if you want to use the local version of transcription module
-RUN apt install -y python pip
+RUN apt install -y python-is-python3 pip
 #RUN pip install -y python pip
 #Actualizar pip para poder usar el cache purge
 RUN pip3 install --upgrade pip
