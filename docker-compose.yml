@@ -21,3 +21,4 @@ services:
               capabilities: [gpu]
     tmpfs:
       - /tmp
+    command: nvidia-smi
