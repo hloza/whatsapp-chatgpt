@@ -17,6 +17,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
+              count: all
               capabilities: [gpu]
     tmpfs:
       - /tmp
