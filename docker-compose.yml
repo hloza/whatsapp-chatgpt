@@ -21,6 +21,4 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
-    tmpfs:
-      - /tmp
     command: sh -c "nvidia-smi && npm run start"
