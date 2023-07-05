@@ -11,7 +11,7 @@ services:
       TRANSCRIPTION_MODE: "local"
     ports:
       - "3000:3000"
-     volumes:
+    volumes:
       - "$$id-app-whatsapp:/app/session"
     restart: unless-stopped
     deploy:
