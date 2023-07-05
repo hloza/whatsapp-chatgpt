@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  wppBOT:
+  wppbot:
     build: .
     environment:
       OPENAI_API_KEY: "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"
