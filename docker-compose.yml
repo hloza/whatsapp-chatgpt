@@ -21,4 +21,4 @@ services:
               capabilities: [gpu]
     tmpfs:
       - /tmp
-    command: nvidia-smi
+    command: sh -c "nvidia-smi && npm run start"
