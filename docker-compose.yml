@@ -11,7 +11,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - "appwhatsapp:/app/session"
+      - "app-wpp:/app/session"
     restart: unless-stopped
     deploy:
       resources:
