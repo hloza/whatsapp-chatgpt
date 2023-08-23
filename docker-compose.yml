@@ -10,8 +10,6 @@ services:
       TRANSCRIPTION_MODE: "local"
     ports:
       - "3000:3000"
-    volumes:
-      - "app-wpp2:/app/session"
     restart: unless-stopped
     deploy:
       resources:
