@@ -31,5 +31,6 @@ ENV OPENAI_API_KEY ""
 ENV PREFIX_ENABLED ""
 COPY package.json package-lock.json ./
 RUN npm install
+RUN npm install vite-node@0.34.2
 COPY . .
 CMD ["npm", "run", "start"]
