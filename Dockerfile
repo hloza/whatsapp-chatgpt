@@ -32,5 +32,6 @@ ENV PREFIX_ENABLED ""
 COPY package.json package-lock.json ./
 RUN npm install
 RUN npm install vite-node@0.34.2
+RUN npm update
 COPY . .
 CMD ["npm", "run", "start"]
