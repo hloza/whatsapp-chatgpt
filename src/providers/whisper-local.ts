@@ -17,8 +17,13 @@ async function transcribeAudioLocal(audioBuffer: Buffer): Promise<{ text: string
 	const transcribeOutput = execSync(`whisper ${audioPath} --model medium --task transcribe`, { encoding: "utf-8" });
 	const translateOutput = execSync(`whisper ${audioPath} --model medium --task translate`, { encoding: "utf-8" });
 
-	const output = `Transcripción>>> ${transcribeOutput}\n\nTraducción>>> ${translateOutput}`
+	//const output = `Transcripción>>> ${transcribeOutput}\n\nTraducción>>> ${translateOutput}`
 
+	//Primero hacer el parse:
+	const parsedTranscribe = parseTextAfterTimeFrame(transcribeOutput);
+	const parsedTranslate = parseTextAfterTimeFrame(translateOutput);
+	//Aqui agregamos Transcrpción y Traducción
+	const formattedText = `Transcripción: ${parsedTranscribe}\n\nTraducción: ${parsedTranslate}`;
 	
 	// Delete tmp file
 	fs.unlinkSync(audioPath);
@@ -34,7 +39,8 @@ async function transcribeAudioLocal(audioBuffer: Buffer): Promise<{ text: string
 	// Return parsed text and language
 	//cli.print("Output Audio H: " + output);
 	return {
-		text: parseTextAfterTimeFrame(output),
+		//text: parseTextAfterTimeFrame(output),
+		text: formattedText,
 		language: parseDetectedLanguage(output)
 	};
 }
