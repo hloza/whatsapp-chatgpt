@@ -17,7 +17,8 @@ async function transcribeAudioLocal(audioBuffer: Buffer): Promise<{ text: string
 	const transcribeOutput = execSync(`whisper ${audioPath} --model medium --task transcribe`, { encoding: "utf-8" });
 	const translateOutput = execSync(`whisper ${audioPath} --model medium --task translate`, { encoding: "utf-8" });
 
-	//const output = `Transcripción>>> ${transcribeOutput}\n\nTraducción>>> ${translateOutput}`
+	//Esta variable se queda para la detección de lenguaje.
+	const output = `Transcripción>>> ${transcribeOutput}\n\nTraducción>>> ${translateOutput}`
 
 	//Primero hacer el parse:
 	const parsedTranscribe = parseTextAfterTimeFrame(transcribeOutput);
