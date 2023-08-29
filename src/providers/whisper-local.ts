@@ -12,9 +12,14 @@ async function transcribeAudioLocal(audioBuffer: Buffer): Promise<{ text: string
 	const audioPath = path.join(tempdir, randomUUID() + ".wav");
 	fs.writeFileSync(audioPath, audioBuffer);
 
-	// Transcribe audio
-	const output = execSync(`whisper ${audioPath} --model medium --task translate --task transcribe`, { encoding: "utf-8" });
+	// Transcribe + translate audio
+	//const output = execSync(`whisper ${audioPath} --model medium --task translate --task transcribe`, { encoding: "utf-8" });
+	const transcribeOutput = execSync(`whisper ${audioPath} --model medium --task transcribe`, { encoding: "utf-8" });
+	const translateOutput = execSync(`whisper ${audioPath} --model medium --task translate`, { encoding: "utf-8" });
 
+	const output = `Transcripción: ${transcribeOutput}\n\nTraducción: ${translateOutput}`;
+
+	
 	// Delete tmp file
 	fs.unlinkSync(audioPath);
 
