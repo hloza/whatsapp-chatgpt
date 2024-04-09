@@ -11,7 +11,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"aws-sdk": "^2.1467.0",
-		"chatgpt": "^5.2.5",
+		"@clack/prompts": "^0.6.3",
+		"chatgpt-official": "^1.1.9",
 		"dotenv": "^16.3.1",
 		"fetch-blob": "^4.0.0",
 		"ffmpeg": "^0.0.4",
