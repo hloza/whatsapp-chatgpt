@@ -32,6 +32,6 @@ ENV PREFIX_ENABLED ""
 COPY package.json package-lock.json ./
 RUN npm update whatsapp-web.js
 RUN npm install
-RUN npm install vite-node@0.32.0
+RUN npm install vite-node@0.31.1
 COPY . .
 CMD ["npm", "run", "start"]
