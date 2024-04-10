@@ -31,7 +31,7 @@ ENV OPENAI_API_KEY ""
 ENV PREFIX_ENABLED ""
 COPY package.json package-lock.json ./
 RUN npm install
-RUN npm install vite-node@0.31.1
+RUN npm install vite-node@0.32.0
 RUN npm update whatsapp-web.js
 COPY . .
 CMD ["npm", "run", "start"]
