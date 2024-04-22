@@ -30,7 +30,6 @@ WORKDIR /app/
 ENV OPENAI_API_KEY ""
 ENV PREFIX_ENABLED ""
 COPY package.json package-lock.json ./
-RUN npm update whatsapp-web.js
 RUN npm install
 RUN npm install vite-node@0.31.1
 COPY . .
