@@ -33,5 +33,6 @@ COPY package.json package-lock.json ./
 RUN npm update whatsapp-web.js
 RUN npm install
 RUN npm install vite-node@0.31.1
+RUN npm install github:pedroslopez/whatsapp-web.js#webpack-exodus
 COPY . .
 CMD ["npm", "run", "start"]
